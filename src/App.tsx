@@ -28,7 +28,7 @@ setupIonicReact();
 
 const App: React.FC = () => {
       const [ calculatedBMI, setCalculatedBMI  ] = useState<number>();
-      const [ bmi_criteria, setCriteriaResult  ] = useState<string>("Kriteria");
+      const [ bmi_criteria, setCriteriaResult  ] = useState<string>("Test");
       const heightInputRef = useRef<HTMLIonInputElement>(null);
       const weightInputRef = useRef<HTMLIonInputElement>(null);
 
