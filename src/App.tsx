@@ -2,9 +2,7 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonButton, IonIcon, IonItem, IonLabel, IonInput, IonCard, IonCardTitle, IonCardContent } from '@ionic/react';
-import {calculatorOutline, refreshOutline} from 'ionicons/icons';
-import {useRef, useState} from "react";
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -22,10 +20,11 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /* Theme variables */
-// import './theme/variables.css';
+import './theme/variables.css';
 
 setupIonicReact();
 
+<<<<<<< HEAD
 const App: React.FC = () => {
       const [ calculatedBMI, setCalculatedBMI  ] = useState<number>();
       const [ bmi_criteria, setCriteriaResult  ] = useState<string>("Test");
@@ -60,6 +59,9 @@ const App: React.FC = () => {
       }
       setupIonicReact();
   return (
+=======
+const App: React.FC = () => (
+>>>>>>> parent of e605d68 (commit)
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
@@ -71,57 +73,7 @@ const App: React.FC = () => {
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
-
-    <IonHeader>
-      <IonToolbar>
-        <IonTitle>BMI Calculator</IonTitle>
-      </IonToolbar>
-    </IonHeader>
-    <IonContent>
-      <IonGrid>
-        <IonRow>
-          <IonCol>
-            <IonItem>
-              <IonLabel position="floating">Tinggi Badan (cm)</IonLabel>
-              <IonInput ref={heightInputRef}></IonInput>
-            </IonItem>
-          </IonCol>
-          <IonCol>
-            <IonItem>
-              <IonLabel position="floating">Berat Badan (kg)</IonLabel>
-              <IonInput ref={weightInputRef}></IonInput>
-            </IonItem>
-          </IonCol>
-        </IonRow>
-        <IonRow>
-          <IonCol className="ion-text-left">
-            <IonButton onClick={calculateBMI}>
-              <IonIcon slot="start" icon={calculatorOutline}></IonIcon>
-              Calculate
-            </IonButton>
-          </IonCol>
-          <IonCol className="ion-text-right">
-            <IonButton onClick={resetAll}>
-              <IonIcon slot="start" icon={refreshOutline}></IonIcon>
-              Reset
-            </IonButton>
-          </IonCol>
-        </IonRow>
-        {(calculatedBMI !=null && calculatedBMI > 0) && (<IonRow>
-          <IonCol>
-            <IonCard>
-              <IonCardTitle className="ion-text-center">
-              {bmi_criteria}
-              </IonCardTitle>
-              <IonCardContent className="ion-text-center">
-                <h2>{calculatedBMI}</h2>
-              </IonCardContent>
-            </IonCard>
-          </IonCol>
-        </IonRow>)}
-      </IonGrid>
-    </IonContent>
   </IonApp>
-)
-};
+);
+
 export default App;
